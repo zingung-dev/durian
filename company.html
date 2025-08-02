@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생각은 현실이 된다</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 성능 최적화 설정 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: url('images/sky.jpg');
+            background-position: center 10%;
+            background-size: cover;
+        }
+        html {
+            overflow-y: scroll;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                background-image: url('images/sky.jpg');
+                background-position: top center;
+                background-size: 100% 166.666%;
+            }
+        }
+        
+        /* 모바일 미디어 쿼리 수정 */
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                /* margin-top: 15px; */
+            }
+            
+            nav ul {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            nav ul li a {
+                font-size: 15px;
+                padding: 3px 0;
+            }
+            
+            header .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* .logo {
+                margin-bottom: 10px;
+            } */
+        }
+        
+        @media (max-width: 576px) {
+            nav ul li a {
+                font-size: 14px;
+            }
+        }
+        
+        /* 프로젝트 배지 스타일 */
+        .project-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-left: 8px;
+            vertical-align: middle;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* 프로젝트 부제목 스타일 */
+        .project-grid.three-column .project-info p:first-of-type {
+            color: #2c6bac;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        /* 모달 내 부제목 스타일 */
+        #modalSubtitle {
+            color: #2c6bac;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+        
+        /* 프로젝트 아이템 커서 변경 */
+        .project-item {
+            cursor: pointer;
+        }
+        
+        /* 개발중 버튼 스타일 */
+        .btn.in-progress {
+            background-color: #6c757d !important;
+            border-color: #6c757d !important;
+            cursor: not-allowed !important;
+        }
+        
+        .btn.in-progress:hover {
+            background-color: #5a6268 !important;
+            border-color: #5a6268 !important;
+        }
+        
+        /* 모달 내 개발중 버튼 스타일 */
+        #modalLink.in-progress {
+            background-color: #6c757d !important;
+            border-color: #6c757d !important;
+            cursor: not-allowed !important;
+        }
+        
+        /* 연락처 3줄 가운데 정렬 및 줄간격 통일 */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .contact-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .contact-row p, .contact-row a {
+            margin: 0;
+            text-align: center;
+        }
+        .contact-row:last-child {
+            margin-bottom: 0;
+        }
+        /* 모바일에서 조직도 이미지는 100%로 */
+        @media (max-width: 768px) {
+            .team-org-img {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo header-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="두리안 로고">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Durian Project 100</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>무한상상</h1>
+            <div class="hero-quote">
+                <p>인간은 상상하고 AI는 실현한다</p>
+                <p>인간은 질문하고 AI는 모색한다</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="history" class="history">
+        <div class="container">
+            <h2>Story</h2>
+            <p class="section-subtitle">"살아있다면 움직여라"</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">2025.04.01</div>
+                    <div class="content">
+                        <h3>2025 신용보증기금 글로컬 스타트업 공동지원사업 선정</h3>
+                        <p>사업비 2억원 확보</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2025.01.31</div>
+                    <div class="content">
+                        <h3>울산스타트업허브 입주</h3>
+                        <p>종하이노베이션센터 505호 (두리안 연구개발전담부서)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2024.12.31</div>
+                    <div class="content">
+                        <h3>보유 지식재산권 총 10건</h3>
+                        <p>특허등록 1건, 특허출원 4건, 상표출원 5건</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2024.12.24</div>
+                    <div class="content">
+                        <h3>최초 인간직원(이상범) 채용</h3>
+                        <p>혁신개발팀</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2024.12.14</div>
+                    <div class="content">
+                        <h3>두리안 회사로고 상표출원</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2024.10.30</div>
+                    <div class="content">
+                        <h3>두리안 사업자등록</h3>
+                        <p>사업자번호 791-25-01772 (개인사업자)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2024.10.19</div>
+                    <div class="content">
+                        <h3>두리안 사명 지음</h3>
+                        <p>AI직원 회의를 거쳐 결정</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2024.09.26</div>
+                    <div class="content">
+                        <h3>2024 시큐리티 스타트업 캠프 지원사업 선정</h3>
+                        <p>부산정보산업진흥원 주관</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2024.04.29</div>
+                    <div class="content">
+                        <h3>2024 예비창업패키지 선정</h3>
+                        <p>창업진흥원 주관</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="patents" class="patents">
+        <div class="container">
+            <h2>지식재산권</h2>
+            <p class="section-subtitle">"매년 뭐라도 1개는 출원하자!"</p>
+            <div class="patent-tabs">
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-tab="patents">특허</button>
+                    <button class="tab-btn" data-tab="trademarks">상표</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="patents-tab">
+                        <ul class="patent-list">
+                            <li>
+                                <span class="status registered">등록</span>
+                                <span class="date">2017.05.08</span>
+                                <div class="number-container">
+                                    <span class="number">10-1734512</span>
+                                </div>
+                                <span class="title">비콘 기반의 원룸 중개 시스템 및 이를 이용한 원룸 중개 방법</span>
+                            </li>
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2023.10.31</span>
+                                <div class="number-container">
+                                    <span class="number">10-2023-0147903</span>
+                                </div>
+                                <span class="title">곱돌과 황토를 활용한 저주파 자극기</span>
+                            </li>
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2024.01.26</span>
+                                <div class="number-container">
+                                    <span class="number">10-2024-0012717</span>
+                                </div>
+                                <span class="title">AI.변호사 부동산 거래위험 더블체크 서비스 "보고또보고"</span>
+                            </li>
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2024.12.23</span>
+                                <div class="number-container">
+                                    <span class="number">10-2024-0194779</span>
+                                </div>
+                                <span class="title">부동산 거래 위험 이중 점검 및 모듈형 부동산 안전거래 시스템</span>
+                            </li>
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2024.12.31</span>
+                                <div class="number-container">
+                                    <span class="number">10-2024-0202763</span>
+                                </div>
+                                <span class="title">한국형 부동산 거래대금 에스크로 시스템</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="trademarks-tab">
+                        <ul class="patent-list">
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2024.01.30</span>
+                                <div class="number-container">
+                                    <span class="number">40-2024-0016621</span>
+                                </div>
+                                <span class="title">보고또보고 35류</span>
+                            </li>
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2024.01.30</span>
+                                <div class="number-container">
+                                    <span class="number">40-2024-0019650</span>
+                                </div>
+                                <span class="title">보고또보고 35류</span>
+                            </li>
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2024.12.14</span>
+                                <div class="number-container">
+                                    <span class="number">40-2024-0230191</span>
+                                </div>
+                                <span class="title">두리안 42류</span>
+                            </li>
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2024.12.14</span>
+                                <div class="number-container">
+                                    <span class="number">40-2024-0230194</span>
+                                </div>
+                                <span class="title">보고또보고 42류</span>
+                            </li>
+                            <li>
+                                <span class="status">출원</span>
+                                <span class="date">2024.12.14</span>
+                                <div class="number-container">
+                                    <span class="number">40-2024-0230195</span>
+                                </div>
+                                <span class="title">두리안 42류</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Team</h2>
+            <p class="section-subtitle">"AI보다 못한 직원은 필요없다"</p>
+            <div style="width:100%; display:flex; justify-content:center; align-items:center; margin: 40px 0;">
+                <img src="images/team.jpg" alt="조직도" class="team-org-img" style="width:80%; max-width:100%; height:auto; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+            </div>
+            <div class="team-members">
+                <div class="member-grid">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/lee.png" alt="이봉준 대표">
+                        </div>
+                        <div class="member-info">
+                            <h4>이봉준</h4>
+                            <p class="member-position">대표</p>
+                            <p class="member-desc">AI개발자. 생각을 현실로 만들어가는 혁신가</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/bomi.png" alt="이상범 개발자">
+                        </div>
+                        <div class="member-info">
+                            <h4>이상범</h4>
+                            <p class="member-position">풀스택 개발자</p>
+                            <p class="member-desc">두리안 최초의 인간 직원. 인공지능 개발자</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/choi.png" alt="최민성 변호사">
+                        </div>
+                        <div class="member-info">
+                            <h4>최민성</h4>
+                            <p class="member-position">법률자문</p>
+                            <p class="member-desc">법무법인 공명 변호사. 경력 20년 이상. 전 한국자산관리공사 고문변호사</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/park.png" alt="박형배 대표">
+                        </div>
+                        <div class="member-info">
+                            <h4>박형배</h4>
+                            <p class="member-position">기술자문</p>
+                            <p class="member-desc">(주)빈투게더 대표. IPO경험. 회원수 200만명이상 "사랑한지" 앱 운영</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="section-subtitle">"두리안과 협업을 원하시면 연락주세요"</p>
+            <div class="contact-info">
+                <div class="contact-row">
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:durian114@gmail.com">leebj@dongseo.ac.kr</a></p>
+                </div>
+                <div class="contact-row">
+                    <i class="fas fa-phone"></i>
+                    <p><a href="tel:+82-010-7475-8586">010-7475-8586</a></p>
+                </div>
+                <div class="contact-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p class="address">부산 사상구 주례로47</p>
+                </div>
+            </div>
+            <div class="map-container">
+                <div style="width:100%; height:100%; background-color: #f8f9fa; border-radius: 8px; overflow: hidden;">
+                    <div id="google-map" style="width: 100%; height: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.google.com/maps?q=부산%20사상구%20주례로47&output=embed" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                        <img src="images/logo.png" alt="두리안 로고" width="100">
+                    </a>
+                </div>
+                <div class="footer-info">
+                    <p><a href="company.html">About Us</a></p>
+                    <p>두리안 | 사업자번호: 791-25-01772</p>
+                    <p class="address">부산 사상구 주례로47</p>
+                    <p>&copy; 2025 두리안. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 프로젝트 팝업 모달 - 완전히 단순화 -->
+    <div id="projectModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.7); overflow: hidden;">
+        <table id="modalTable" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 85%; max-width: 1200px; height: auto; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-collapse: collapse;">
+            <tr>
+                <td style="padding: 20px; vertical-align: top; position: relative; max-height: 85vh; overflow: auto;">
+                    <span id="closeModalBtn" style="position: absolute; top: 10px; right: 15px; font-size: 28px; color: #777; cursor: pointer; z-index: 2;">&times;</span>
+                    
+                    <!-- 이미지 컨테이너 -->
+                    <div style="width: 100%; text-align: center; margin-bottom: 15px; position: relative;">
+                        <img id="modalImage" src="about:blank" alt="" style="max-width: 100%; max-height: 60vh; border-radius: 6px; object-fit: contain; transform-origin: center center;">
+                    </div>
+                    
+                    <!-- 텍스트 컨테이너 -->
+                    <div style="width: 100%; padding: 8px 12px; background-color: #f9f9f9; border-radius: 6px;">
+                        <h3 id="modalTitle" style="margin-top: 0; font-size: 26px; color: #333; display: flex; align-items: center;"></h3>
+                        <p id="modalSubtitle" style="color: #2c6bac; font-weight: 600; margin-bottom: 15px; font-size: 18px;"></p>
+                        <p id="modalDescription" style="margin-bottom: 20px; line-height: 1.6; font-size: 16px;"></p>
+                        <button id="modalLink" style="display: inline-block; font-size: 16px; padding: 10px 20px; color: white; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; outline: none;">바로가기</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 커스텀 알림창 -->
+    <div id="customAlert" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); overflow: hidden;">
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); min-width: 300px; text-align: center;">
+            <h3 id="alertTitle" style="margin-top: 0; font-size: 18px; font-weight: bold; margin-bottom: 10px;">이 페이지는</h3>
+            <p id="alertMessage" style="margin-bottom: 20px;">현재 개발중인 프로젝트입니다.</p>
+            <button id="alertClose" style="background-color: #0275d8; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">확인</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

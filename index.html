@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두리안 - 생각은 현실이 된다</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Open Graph 메타 태그 추가 -->
+    <meta property="og:title" content="생각은 현실이 된다">
+    <meta property="og:description" content="여기를 눌러 링크를 확인하세요.">
+    <meta property="og:image" content="http://durian.ai.kr/images/durian.png">
+    <meta property="og:url" content="https://durian.ai.kr/">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card 메타 태그 추가 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="생각은 현실이 된다">
+    <meta name="twitter:description" content="여기를 눌러 링크를 확인하세요.">
+    <meta name="twitter:image" content="http://durian.ai.kr/images/durian.png">
+    <style>
+        .hero {
+            position: relative;
+            background-image: url('images/space.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #1a1a1a;
+        }
+        html {
+            overflow-y: scroll;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                background-image: url('images/space.jpg');
+            }
+        }
+        /* 프로젝트 배지 스타일 */
+        .project-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-left: 8px;
+            vertical-align: middle;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo header-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="두리안 로고">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Durian Project 100</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h1>생각은 현실이 된다</h1>
+            <div class="hero-quote">
+                <p>세상은 물질과 정신의 조화이다</p>
+                <p>보이지 않는 생각이 보이는 현실을 만든다</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Durian Project 100</h2>
+            <p class="section-subtitle">"아이디어를 현실로 만들어 보세요"</p>
+            <div class="project-grid three-column">
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/001.JPG" alt="보고또보고">
+                    </div>
+                    <div class="project-info">
+                        <h3>001. 보고또보고 <span class="project-badge">2024 예비창업패키지 수행과제</span></h3>
+                        <p>AI.변호사 부동산 거래위험 더블체크 서비스</p>
+                        <p>부동산 거래 시 발생할 수 있는 위험을 이중으로 체크하여 안전한 거래를 돕는 서비스입니다.</p>
+                        <a href="http://www.bogottobogo.com" class="btn" target="_blank">바로가기</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/002.JPG" alt="팀메이커">
+                    </div>
+                    <div class="project-info">
+                        <h3>002. 팀메이커</h3>
+                        <p>스타트업 팀원찾기 서비스</p>
+                        <p>아이디어는 있지만 함께할 팀원이 필요한 스타트업을 위한 팀원 매칭 플랫폼입니다.</p>
+                        <a href="http://www.teammaker.com" class="btn in-progress" target="_blank">개발중</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/003.JPG" alt="소울메이트">
+                    </div>
+                    <div class="project-info">
+                        <h3>003. 소울메이트</h3>
+                        <p>진로찾기 및 고민상담 서비스</p>
+                        <p>AI 기반 심층 분석을 통해 개인의 적성과 성향에 맞는 최적의 진로를 제안하는 서비스입니다.</p>
+                        <a href="http://www.soulmate.com" class="btn in-progress" target="_blank">개발중</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/004.JPG" alt="타임마켓">
+                    </div>
+                    <div class="project-info">
+                        <h3>004. 타임마켓</h3>
+                        <p>개인 소장품 온라인 거래 플랫폼</p>
+                        <p>개인이 소장한 귀중한 물품들을 안전하게 거래할 수 있는 온라인 마켓플레이스입니다.</p>
+                        <a href="http://www.timemarket.com" class="btn in-progress" target="_blank">개발중</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/005.JPG" alt="마이푸드">
+                    </div>
+                    <div class="project-info">
+                        <h3>005. 마이푸드</h3>
+                        <p>내게 맞는 식단 추천 서비스</p>
+                        <p>개인 건강 상태와 식습관을 분석하여 최적화된 맞춤형 식단을 추천하는 서비스입니다.</p>
+                        <a href="http://www.myfood.com" class="btn in-progress" target="_blank">개발중</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/006.JPG" alt="일일/주간회의">
+                    </div>
+                    <div class="project-info">
+                        <h3>006. 주간회의 시스템</h3>
+                        <p>동서대학교 Q College 주간회의 시스템</p>
+                        <p>일일, 주간회의를 간단 명료하게 기록 및 저장하는 서비스입니다.</p>
+                        <a href="https://qcollege.vercel.app" class="btn" target="_blank">바로가기</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/007.JPG" alt="하회당">
+                    </div>
+                    <div class="project-info">
+                        <h3>007. 하회당</h3>
+                        <p>하회당 정통안동찜닭 공식사이트</p>
+                        <p>경북 안동의 태평원에서 만드는 하회당 안동찜닭 공식사이트입니다.</p>
+                        <a href="https://www.hahoedang.com/" class="btn" target="_blank">바로가기</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/008.jpg" alt="변호사 홈페이지">
+                    </div>
+                    <div class="project-info">
+                        <h3>008. 최민성 변호사</h3>
+                        <p>느낌있는 변호사 홈페이지</p>
+                        <p>법무법인 공명 최민성 변호사의 공식사이트입니다.</p>
+                        <a href="https://www.lawyer1.kr/" class="btn" target="_blank">바로가기</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/009.jpg" alt="성격테스트">
+                    </div>
+                    <div class="project-info">
+                        <h3>009. 성격테스트</h3>
+                        <p>동서대학교 Q College 학생상담용 테스트</p>
+                        <p>게임처럼 쉽고 간단하게 다양한 성격테스트를 해보는 서비스입니다.</p>
+                        <a href="https://q-college-mbti.vercel.app/" class="btn" target="_blank">바로가기</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/010.JPG" alt="ESG데이터관리시스템">
+                    </div>
+                    <div class="project-info">
+                        <h3>010. ESG데이터관리시스템</h3>
+                        <p>동서대학교 ESG데이터관리 시스템</p>
+                        <p>대학의 ESG경영실적과 데이터를 편리하게 관리하는 서비스입니다.</p>
+                        <a href="#" class="btn in-progress" target="_blank">개발중</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/011.JPG" alt="워커장군부자추모사업회">
+                    </div>
+                    <div class="project-info">
+                        <h3>011. 워커장군부자추모사업회</h3>
+                        <p>워커장군부자추모사업회 공식사이트</p>
+                        <p>워커장군 부자의 숭고한 정신을 기리는 추모 사업회 공식사이트입니다.</p>
+                        <a href="https://011-worker.vercel.app/" class="btn" target="_blank">바로가기</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/012.JPG" alt="광고닷컴">
+                    </div>
+                    <div class="project-info">
+                        <h3>012. 광고닷컴</h3>
+                        <p>광고회사 웹사이트</p>
+                        <p>대구 달서구 소재 종합광고회사 광고닷컴의 웹사이트입니다.</p>
+                        <a href="https://012-gwanggo.vercel.app/" class="btn" target="_blank">바로가기</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="images/project/013.JPG" alt="아름다운 동행 봉사단">
+                    </div>
+                    <div class="project-info">
+                        <h3>013. 아름다운 동행 봉사단</h3>
+                        <p>아름다운 동행 봉사단 공식사이트</p>
+                        <p>2006년부터 지역사회에 봉사활동을 실천하고 있는 봉사단체의 웹사이트 입니다.</p>
+                        <a href="https://250801-beautiful.vercel.app/" class="btn" target="_blank">바로가기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="두리안 로고" width="100">
+                    </a>
+                </div>
+                <div class="footer-info">
+                    <p><a href="company.html">About Us</a></p>
+                    <p>두리안 | 사업자번호: 791-25-01772</p>
+                    <p class="address">부산 사상구 주례로47</p>
+                    <p>&copy; 2025 두리안. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 프로젝트 팝업 모달 - 완전히 단순화 -->
+    <div id="projectModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.7); overflow: hidden;">
+        <table id="modalTable" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 85%; max-width: 1200px; height: auto; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-collapse: collapse;">
+            <tr>
+                <td style="padding: 20px; vertical-align: top; position: relative; max-height: 85vh; overflow: auto;">
+                    <span id="closeModalBtn" style="position: absolute; top: 10px; right: 15px; font-size: 28px; color: #777; cursor: pointer; z-index: 2;">&times;</span>
+                    
+                    <!-- 이미지 컨테이너 -->
+                    <div style="width: 100%; text-align: center; margin-bottom: 15px; position: relative;">
+                        <img id="modalImage" src="about:blank" alt="" style="max-width: 100%; max-height: 60vh; border-radius: 6px; object-fit: contain; transform-origin: center center;">
+                    </div>
+                    
+                    <!-- 텍스트 컨테이너 -->
+                    <div style="width: 100%; padding: 8px 12px; background-color: #f9f9f9; border-radius: 6px;">
+                        <h3 id="modalTitle" style="margin-top: 0; font-size: 26px; color: #333; display: flex; align-items: center;"></h3>
+                        <p id="modalSubtitle" style="color: #2c6bac; font-weight: 600; margin-bottom: 15px; font-size: 18px;"></p>
+                        <p id="modalDescription" style="margin-bottom: 20px; line-height: 1.6; font-size: 16px;"></p>
+                        <button id="modalLink" style="display: inline-block; font-size: 16px; padding: 10px 20px; color: white; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; outline: none;">바로가기</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 커스텀 알림창 -->
+    <div id="customAlert" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); overflow: hidden;">
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); min-width: 300px; text-align: center;">
+            <h3 id="alertTitle" style="margin-top: 0; font-size: 18px; font-weight: bold; margin-bottom: 10px;">이 페이지는</h3>
+            <p id="alertMessage" style="margin-bottom: 20px;">현재 개발중인 프로젝트입니다.</p>
+            <button id="alertClose" style="background-color: #0275d8; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">확인</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
