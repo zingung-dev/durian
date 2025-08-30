@@ -86,7 +86,11 @@ nav ul li a:hover::after {
 .hero {
     padding: 180px 0;
     text-align: center;
-    background: linear-gradient(135deg, #0b0b29 0%, #123597 30%, #42b4bf 50%, #8f44ad 70%, #0b0b29 100%);
+    background-image: url('images/space.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1a1a1a; /* 폴백 색상 */
     position: relative;
     overflow: hidden;
     color: #fff;
@@ -198,11 +202,23 @@ nav ul li a:hover::after {
     font-weight: 500;
     transition: background-color 0.3s ease;
     border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #003d82;
     color: #fff;
+}
+
+/* 개편중 버튼 스타일 */
+.btn.under-reconstruction {
+    background-color: #D35400 !important; /* 진한 주황색 */
+    border-color: #D35400 !important;
+}
+
+.btn.under-reconstruction:hover {
+    background-color: #BA4A00 !important; /* 더 진한 주황색 (호버) */
+    border-color: #BA4A00 !important;
 }
 
 /* 섹션 공통 스타일 */
@@ -495,7 +511,8 @@ section h2::after {
 }
 
 .project-info .btn.in-progress {
-    background-color: #6c757d;
+    background-color: #6c757d !important; /* 회색 */
+    border-color: #6c757d !important;
     position: relative;
     display: inline-block;
     padding: 8px 16px;
@@ -503,9 +520,48 @@ section h2::after {
     min-width: 0;
 }
 
+.project-info .btn.in-progress:hover {
+    background-color: #5a6268 !important; /* 회색 호버 */
+    border-color: #5a6268 !important;
+}
+
 .project-info .btn.in-progress:after {
     content: '';
     margin-left: 0;
+}
+
+.btn.btn-download {
+    background-color: #28a745 !important; /* 초록색 */
+    border-color: #28a745 !important;
+}
+
+.btn.btn-download:hover {
+    background-color: #218838 !important; /* 더 진한 초록색 (호버) */
+    border-color: #218838 !important;
+}
+
+/* 모달 내 공사중 버튼 스타일 */
+#modalLink.in-progress {
+    background-color: #6c757d !important; /* 회색 */
+    border-color: #6c757d !important;
+    cursor: not-allowed !important;
+}
+
+#modalLink.in-progress:hover {
+    background-color: #5a6268 !important; /* 회색 호버 */
+    border-color: #5a6268 !important;
+}
+
+/* 모달 내 공사중 (개편중) 버튼 스타일 */
+#modalLink.under-reconstruction {
+    background-color: #D35400 !important; /* 진한 주황색 */
+    border-color: #D35400 !important;
+    cursor: not-allowed !important;
+}
+
+#modalLink.under-reconstruction:hover {
+    background-color: #BA4A00 !important; /* 더 진한 주황색 (호버) */
+    border-color: #BA4A00 !important;
 }
 
 /* 메인 프로젝트 아이템 추가 스타일 */
@@ -1242,7 +1298,7 @@ footer {
     .timeline-item::before {
         left: 26px;
     }
-
+    
     .timeline-item:first-child::before {
         left: 24px;
     }
@@ -1704,5 +1760,93 @@ footer {
     .project-grid.two-column,
     .project-grid.three-column {
         grid-template-columns: 1fr;
+    }
+} 
+
+/* Company Page S.E.C Styles */
+.hero-content-new {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 중앙 정렬 */
+    flex-direction: column;
+    text-align: center; /* 내부 텍스트 중앙 정렬 */
+    /* height는 .hero 섹션의 padding으로 조절 */
+    padding: 0; /* 기존 container padding 제거 */
+}
+
+.sec-item {
+    margin-bottom: 20px; /* 각 항목 사이 간격 */
+}
+
+.sec-text-group {
+    display: flex;
+    align-items: baseline; /* 텍스트 베이스라인 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+    margin-bottom: 5px; /* 단어와 의미 사이 간격 */
+}
+
+.sec-word-wrapper {
+    font-size: 3rem; /* "ymple", "asy", "onvenient" 부분 */
+    font-weight: 700;
+    color: white;
+    display: flex; /* S와 나머지 텍스트를 같은 줄에 정렬 */
+    align-items: center; /* 박스 처리된 large-char와 나머지 텍스트 세로 중앙 정렬 */
+}
+
+.large-char {
+    font-size: 4.5rem; /* S, E, C만 크게 */
+    color: white; /* 강조 색상 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 박스 테두리 */
+    padding: 5px 10px; /* 박스 내부 패딩 */
+    border-radius: 8px; /* 박스 모서리 둥글게 */
+    background-color: rgba(0, 0, 0, 0.4); /* 박스 배경색 */
+    margin-right: 5px; /* S, E, C 박스와 나머지 텍스트 사이 간격 */
+    line-height: 1; /* 단어 정렬을 위해 추가 */
+}
+
+.sec-meaning {
+    font-size: 1.8rem; /* 의미 텍스트 크기 */
+    color: #ccc;
+    margin-left: 400px; /* 단어와 의미 사이 간격 */
+    font-weight: 500;
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+/* 미디어 쿼리 (모바일 반응형) */
+@media (max-width: 768px) {
+    .hero-content-new {
+        padding: 0; /* 모바일 좌우 패딩 제거 */
+    }
+
+    .sec-word-wrapper {
+        font-size: 2rem;
+    }
+
+    .large-char {
+        font-size: 3rem;
+        margin-right: 5px; /* 모바일 S, E, C 박스와 나머지 텍스트 사이 간격 */
+        padding: 3px 8px;
+    }
+
+    .sec-meaning {
+        font-size: 1.2rem;
+        margin-left: 200px; /* 모바일 단어와 의미 사이 간격 */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content-new {
+        height: 70vh; /* 더 작은 모바일에서 높이 조정 */
+    }
+    .sec-word-wrapper {
+        font-size: 1.5rem;
+    }
+    .large-char {
+        font-size: 2.5rem;
+        padding: 2px 6px;
+    }
+    .sec-meaning {
+        font-size: 1rem;
+        margin-left: 150px; /* 더 작은 모바일 단어와 의미 사이 간격 */
     }
 } 

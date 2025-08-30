@@ -14,145 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .hero {
-            background-image: url('images/sky.jpg');
-            background-position: center 10%;
-            background-size: cover;
-        }
-        html {
-            overflow-y: scroll;
-        }
-        .hero .container {
-            position: relative;
-            z-index: 1;
-        }
-        @media (max-width: 768px) {
-            .hero {
-                background-image: url('images/sky.jpg');
-                background-position: top center;
-                background-size: 100% 166.666%;
-            }
-        }
-        
-        /* 모바일 미디어 쿼리 수정 */
-        @media (max-width: 768px) {
-            nav {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                /* margin-top: 15px; */
-            }
-            
-            nav ul {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            
-            nav ul li a {
-                font-size: 15px;
-                padding: 3px 0;
-            }
-            
-            header .container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            /* .logo {
-                margin-bottom: 10px;
-            } */
-        }
-        
-        @media (max-width: 576px) {
-            nav ul li a {
-                font-size: 14px;
-            }
-        }
-        
-        /* 프로젝트 배지 스타일 */
-        .project-badge {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: white;
-            font-size: 12px;
-            font-weight: 500;
-            padding: 3px 8px;
-            border-radius: 3px;
-            margin-left: 8px;
-            vertical-align: middle;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        /* 프로젝트 부제목 스타일 */
-        .project-grid.three-column .project-info p:first-of-type {
-            color: #2c6bac;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        /* 모달 내 부제목 스타일 */
-        #modalSubtitle {
-            color: #2c6bac;
-            font-weight: 600;
-            margin-bottom: 12px;
-            font-size: 17px;
-        }
-        
-        /* 프로젝트 아이템 커서 변경 */
-        .project-item {
-            cursor: pointer;
-        }
-        
-        /* 개발중 버튼 스타일 */
-        .btn.in-progress {
-            background-color: #6c757d !important;
-            border-color: #6c757d !important;
-            cursor: not-allowed !important;
-        }
-        
-        .btn.in-progress:hover {
-            background-color: #5a6268 !important;
-            border-color: #5a6268 !important;
-        }
-        
-        /* 모달 내 개발중 버튼 스타일 */
-        #modalLink.in-progress {
-            background-color: #6c757d !important;
-            border-color: #6c757d !important;
-            cursor: not-allowed !important;
-        }
-        
-        /* 연락처 3줄 가운데 정렬 및 줄간격 통일 */
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        .contact-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-        .contact-row p, .contact-row a {
-            margin: 0;
-            text-align: center;
-        }
-        .contact-row:last-child {
-            margin-bottom: 0;
-        }
-        /* 모바일에서 조직도 이미지는 100%로 */
-        @media (max-width: 768px) {
-            .team-org-img {
-                width: 100% !important;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -171,11 +32,30 @@
     </header>
 
     <section class="hero">
-        <div class="container">
-            <h1>무한상상</h1>
-            <div class="hero-quote">
-                <p>인간은 상상하고 AI는 실현한다</p>
-                <p>인간은 질문하고 AI는 모색한다</p>
+        <div class="container hero-content-new">
+            <div class="sec-item">
+                <div class="sec-text-group">
+                    <div class="sec-word-wrapper">
+                        <span class="large-char">S</span>ymple
+                    </div>
+                    <p class="sec-meaning">최대한 간단하게</p>
+                </div>
+            </div>
+            <div class="sec-item">
+                <div class="sec-text-group">
+                    <div class="sec-word-wrapper">
+                        <span class="large-char">E</span>asy
+                    </div>
+                    <p class="sec-meaning">최대한 쉽게</p>
+                </div>
+            </div>
+            <div class="sec-item">
+                <div class="sec-text-group">
+                    <div class="sec-word-wrapper">
+                        <span class="large-char">C</span>onvenient
+                    </div>
+                    <p class="sec-meaning">최대한 편리하게</p>
+                </div>
             </div>
         </div>
     </section>

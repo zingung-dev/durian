@@ -262,13 +262,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 페이지 로드 시 모달 초기화
     const modalControls = initModal();
     
-    // 프로젝트 링크가 개발중인지 확인하는 함수
-    function isInProgressProject(url) {
-        return url === 'http://www.teammaker.com' || 
-               url === 'http://www.soulmate.com' || 
-               url === 'http://www.timemarket.com' || 
-               url === 'http://www.myfood.com' || 
-               url === 'http://www.meeting.com';
+    // 프로젝트 링크가 개발중이거나 공사중인지 확인하는 함수 (클래스로 판단)
+    function isSpecialProjectButton(element) {
+        return element.classList.contains('in-progress') || element.classList.contains('under-reconstruction');
     }
     
     // 커스텀 알림창 함수
@@ -340,15 +336,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const badge = titleElement.querySelector('.project-badge');
             const subtitle = this.querySelector('p:nth-of-type(1)').textContent;
             const description = this.querySelector('p:nth-of-type(2)').textContent;
-            const link = this.querySelector('a').href;
-            const linkText = this.querySelector('a').textContent;
+            const originalLinkElement = this.querySelector('a'); // 원본 <a> 요소 가져오기
             
             // 원래 스타일 저장
-            const originalStyle = window.getComputedStyle(document.body).overflow;
+            const originalBodyStyle = window.getComputedStyle(document.body).overflow;
             
             // 모달 컨트롤에 원래 스타일 전달
             if (modalControls && typeof modalControls.setOriginalBodyStyle === 'function') {
-                modalControls.setOriginalBodyStyle(originalStyle);
+                modalControls.setOriginalBodyStyle(originalBodyStyle);
             }
             
             // 화면 스크롤 방지 (스크롤바 유지하면서)
@@ -370,39 +365,6 @@ document.addEventListener('DOMContentLoaded', function() {
             modalSubtitle.textContent = subtitle;
             modalDescription.textContent = description;
             
-            // 모달 버튼 설정
-            const modalLinkBtn = document.getElementById('modalLink');
-            
-            // 버튼 초기화 (이전 이벤트 리스너 제거를 위해 복제)
-            const newModalBtn = modalLinkBtn.cloneNode(true);
-            modalLinkBtn.parentNode.replaceChild(newModalBtn, modalLinkBtn);
-            
-            // 버튼 텍스트 설정
-            newModalBtn.textContent = linkText;
-            
-            // 개발중 버튼 스타일 및 이벤트 처리
-            if (isInProgressProject(link) || linkText === '개발중') {
-                // 개발중 버튼 스타일 - 반드시 회색으로 설정
-                newModalBtn.style.backgroundColor = '#6c757d';
-                newModalBtn.classList.add('in-progress'); // 클래스 추가
-                
-                // 개발중인 프로젝트의 모달 내 버튼 클릭 이벤트
-                newModalBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showCustomAlert();
-                    return false; // 이벤트 전파 중지
-                });
-            } else {
-                // 정상 프로젝트 버튼 스타일 - 파란색으로 설정
-                newModalBtn.style.backgroundColor = '#0056b3';
-                newModalBtn.classList.remove('in-progress'); // 클래스 제거
-                
-                // 정상 프로젝트는 외부 링크로 이동
-                newModalBtn.addEventListener('click', function() {
-                    window.open(link, '_blank');
-                });
-            }
-            
             // 모달 표시 준비
             optimizeModalForScreenSize();
             
@@ -410,6 +372,48 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 projectModal.style.display = 'block';
             }, 10);
+
+            // 모달 버튼 설정
+            const modalLinkBtn = document.getElementById('modalLink');
+            
+            // 버튼 초기화 (이전 이벤트 리스너 제거를 위해 복제)
+            const newModalBtn = modalLinkBtn.cloneNode(true);
+            modalLinkBtn.parentNode.replaceChild(newModalBtn, modalLinkBtn);
+            
+            // 원본 버튼의 모든 클래스를 새 모달 버튼에 복사 (스타일을 CSS에 위임)
+            newModalBtn.className = ''; // 기존 클래스 모두 제거
+            originalLinkElement.classList.forEach(cls => {
+                newModalBtn.classList.add(cls);
+            });
+            
+            // 'btn' 클래스가 없으면 추가 (확실히 버튼 스타일 적용)
+            if (!newModalBtn.classList.contains('btn')) {
+                newModalBtn.classList.add('btn');
+            }
+
+            // 인라인 스타일 제거 (CSS가 스타일을 제어하도록)
+            newModalBtn.style.backgroundColor = '';
+            newModalBtn.style.borderColor = '';
+            newModalBtn.style.cursor = ''; // 커서 스타일도 CSS에 위임
+            
+            // 버튼 텍스트 설정
+            const link = originalLinkElement.getAttribute('href'); // 변경: .href 대신 .getAttribute('href') 사용
+            newModalBtn.textContent = originalLinkElement.textContent; // 원본 버튼의 텍스트를 그대로 사용
+            newModalBtn.href = link; // 여기서는 이미 변경된 'link' 변수를 사용
+
+            // 개발중 또는 공사중 버튼 이벤트 처리 (클래스 존재 여부로 판단)
+            if (isSpecialProjectButton(originalLinkElement)) {
+                newModalBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showCustomAlert();
+                    return false;
+                });
+            } else {
+                // 정상 프로젝트는 외부 링크로 이동
+                newModalBtn.addEventListener('click', function() {
+                    window.open(link, '_blank'); // 여기에서도 변경된 'link' 변수를 사용
+                });
+            }
         });
     });
     
@@ -1007,8 +1011,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     projectLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (isInProgressProject(href) || link.textContent.trim() === '개발중') {
-            // 개발중 버튼 스타일 유지하면서 링크 제거
+        if (isSpecialProjectButton(link)) {
+            // 개발중 또는 공사중 버튼 스타일 유지하면서 링크 제거
             link.setAttribute('href', 'javascript:void(0)'); // 링크 동작 완전히 제거
             link.removeAttribute('target'); // 새 창으로 열기 제거
             link.style.cursor = 'pointer'; // 커서는 포인터로 유지
